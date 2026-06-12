@@ -2,12 +2,18 @@
   "expo": {
     "name": "coffee-demo-testing",
     "slug": "coffee-demo-testing",
+    "scheme": "coffee-demo-testing",
+
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "experiments": {
+      "typedRoutes": true
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.exponathan.coffeedemotesting"
     },
     "android": {
       "adaptiveIcon": {
@@ -16,10 +22,75 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.exponathan.coffeedemotesting"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-widgets",
+        {
+          "widgets": [
+            {
+              "name": "CoffeeTracker",
+              "displayName": "Coffee Tracker",
+              "description": "Today's coffee count with quick-log buttons.",
+              "ios": {
+                "supportedFamilies": [
+                  "systemSmall",
+                  "systemMedium",
+                  "systemLarge",
+                  "accessoryCircular"
+                ],
+                "configuration": {
+                  "title": "Coffee Tracker",
+                  "description": "Pick the drink the +1 button logs.",
+                  "parameters": {
+                    "defaultDrink": {
+                      "title": "Default drink",
+                      "type": "enum",
+                      "values": [
+                        { "name": "Espresso", "value": "espresso" },
+                        { "name": "Drip", "value": "drip" },
+                        { "name": "Latte", "value": "latte" }
+                      ],
+                      "default": "espresso"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "BrewGuide",
+              "displayName": "Brew Guide",
+              "description": "Your favorite recipe, one tap away.",
+              "ios": {
+                "supportedFamilies": ["systemMedium", "systemLarge"],
+                "configuration": {
+                  "title": "Brew Guide",
+                  "description": "Choose which recipe to show.",
+                  "parameters": {
+                    "recipe": {
+                      "title": "Recipe",
+                      "type": "enum",
+                      "values": [
+                        { "name": "Pour Over", "value": "pourOver" },
+                        { "name": "French Press", "value": "frenchPress" },
+                        { "name": "Espresso", "value": "espresso" },
+                        { "name": "Cold Brew", "value": "coldBrew" }
+                      ],
+                      "default": "pourOver"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    ]
   }
 }
