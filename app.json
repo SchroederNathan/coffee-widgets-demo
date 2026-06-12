@@ -36,8 +36,8 @@
           "widgets": [
             {
               "name": "CoffeeTracker",
-              "displayName": "Coffee Tracker",
-              "description": "Today's coffee count with quick-log buttons.",
+              "displayName": "Coffee Bar",
+              "description": "Today's coffee at a glance, with quick-log buttons and shortcuts into the app.",
               "ios": {
                 "supportedFamilies": [
                   "systemSmall",
@@ -46,7 +46,7 @@
                   "accessoryCircular"
                 ],
                 "configuration": {
-                  "title": "Coffee Tracker",
+                  "title": "Coffee Bar",
                   "description": "Pick the drink the +1 button logs.",
                   "parameters": {
                     "defaultDrink": {
@@ -58,31 +58,6 @@
                         { "name": "Latte", "value": "latte" }
                       ],
                       "default": "espresso"
-                    }
-                  }
-                }
-              }
-            },
-            {
-              "name": "BrewGuide",
-              "displayName": "Brew Guide",
-              "description": "Your favorite recipe, one tap away.",
-              "ios": {
-                "supportedFamilies": ["systemMedium", "systemLarge"],
-                "configuration": {
-                  "title": "Brew Guide",
-                  "description": "Choose which recipe to show.",
-                  "parameters": {
-                    "recipe": {
-                      "title": "Recipe",
-                      "type": "enum",
-                      "values": [
-                        { "name": "Pour Over", "value": "pourOver" },
-                        { "name": "French Press", "value": "frenchPress" },
-                        { "name": "Espresso", "value": "espresso" },
-                        { "name": "Cold Brew", "value": "coldBrew" }
-                      ],
-                      "default": "pourOver"
                     }
                   }
                 }
